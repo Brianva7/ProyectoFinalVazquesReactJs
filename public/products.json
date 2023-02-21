@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Sillon negro",
+    "description": "Descripcion del sillon",
+    "price": 180000,
+    "stock": 5,
+    "category": "interior"
+  },
+  {
+    "id": 2,
+    "name": "Sillon blanco",
+    "description": "Descripcion de sillon",
+    "price": 240000,
+    "stock": 5,
+    "category": "interior"
+  },
+  {
+    "id": 3,
+    "name": "Sillon azul",
+    "description": "Descripcion del sillon",
+    "price": 120000,
+    "stock": 6,
+    "category": "exterior"
+  },
+  {
+    "id": 4,
+    "name": "Sillon rojo",
+    "description": "Descripcion del sillon",
+    "price": 80000,
+    "stock": 7,
+    "category": "exterior"
+  }
+]

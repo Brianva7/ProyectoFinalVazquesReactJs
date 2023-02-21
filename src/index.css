@@ -1,0 +1,70 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+}
+
+.navBar {
+  background-color: #213547;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.brand {
+  color: white;
+  padding: 0 15px;
+  width: 142px;
+  text-align: center;
+}
+
+.menuButton {
+  margin: auto;
+}
+.cartButton {
+  padding: 0 15px;
+  width: 142px;
+  display: flex;
+  justify-content: center;
+}
+
+.cardContainer {
+  justify-content: Center;
+}
+.cardFooter {
+  justify-content: center;
+}
+
+.footerButtons {
+  align-items: center;
+}
+
+.itemList {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  padding: 15px;
+}
+
+.itemContainer {
+  margin: 15px;
+}
