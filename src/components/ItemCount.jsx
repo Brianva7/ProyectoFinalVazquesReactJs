@@ -25,14 +25,14 @@ const ItemCount = ({ stock }) => {
 
   return (
     <>
-      <Button onClick={restar} variant="solid" colorScheme="red">
+      <Button onClick={restar} variant="solid">
         -
       </Button>
-      <Box>{contador}</Box>
-      <Button onClick={sumar} variant="solid" colorScheme="blue">
+      <Box className="countLabel">{contador}</Box>
+      <Button onClick={sumar} variant="solid">
         +
       </Button>
-      <Button onClick={reset} variant="solid" colorScheme="orange">
+      <Button onClick={reset} variant="solid">
         Reset
       </Button>
     </>

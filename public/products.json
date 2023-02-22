@@ -12,7 +12,7 @@
     "name": "Sillon blanco",
     "description": "Descripcion de sillon",
     "price": 240000,
-    "stock": 5,
+    "stock": 2,
     "category": "interior"
   },
   {
@@ -28,7 +28,39 @@
     "name": "Sillon rojo",
     "description": "Descripcion del sillon",
     "price": 80000,
+    "stock": 5,
+    "category": "exterior"
+  },
+  {
+    "id": 5,
+    "name": "Sillon verde",
+    "description": "Descripcion del sillon",
+    "price": 120000,
+    "stock": 3,
+    "category": "interior"
+  },
+  {
+    "id": 6,
+    "name": "Sillon celeste",
+    "description": "Descripcion del sillon",
+    "price": 50000,
     "stock": 7,
     "category": "exterior"
+  },
+  {
+    "id": 7,
+    "name": "Sillon rosa",
+    "description": "Descripcion del sillon",
+    "price": 140000,
+    "stock": 3,
+    "category": "interior"
+  },
+  {
+    "id": 8,
+    "name": "Sillon violeta",
+    "description": "Descripcion del sillon",
+    "price": 25000,
+    "stock": 8,
+    "category": "interior"
   }
 ]

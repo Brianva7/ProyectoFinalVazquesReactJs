@@ -1,29 +1,9 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #ffffff;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+#root {
+  background-color: rgb(255, 255, 255);
+  height: 100%;
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-}
-
 .navBar {
   background-color: #213547;
-  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,9 +42,53 @@
   display: flex;
   flex-flow: wrap;
   justify-content: center;
-  padding: 15px;
+  align-items: center;
+  padding-top: 15px;
+  height: 100%;
+  min-height: 100vh;
 }
 
 .itemContainer {
   margin: 15px;
+  box-shadow: 5px 5px 15px rgb(0, 0, 0);
+}
+
+.countLabel {
+  display: flex;
+  border: 2px solid grey;
+  border-radius: 10%;
+  width: 50px;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+}
+.welcomeContainer {
+  padding: 50px 0 50px 0;
+}
+.welcome {
+  padding: 150px 0 150px 0;
+  height: 100vh;
+  width: 100vw;
+  margin-top: 150px;
+  background-image: url(./assets/welcomebg.jpg);
+  background-size: cover;
+  border-radius: 1%;
+  width: 75%;
+  margin: auto;
+  border: 1px solid;
+  box-shadow: 5px 5px 15px rgb(0, 0, 0);
+}
+
+.welcomeMessage {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.253);
+  border: 1px solid black;
+  width: 50%;
+  margin: 150px auto;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.welcomeP {
+  padding: 15px;
 }

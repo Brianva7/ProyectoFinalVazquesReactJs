@@ -22,7 +22,7 @@ const Item = ({ id, name, stock, category }) => {
             <Stack mt="6" spacing="3">
               <Heading size="md">{name}</Heading>
               <Text>Category : {category}</Text>
-              <Text color="blue.600" fontSize="2xl">
+              <Text color="teal.600" fontSize="2xl">
                 Stock: {stock}
               </Text>
             </Stack>
@@ -30,7 +30,7 @@ const Item = ({ id, name, stock, category }) => {
           <Divider />
           <CardFooter>
             <Link to={`/item/${id}`}>
-              <Button variant="solid" colorScheme="blue">
+              <Button variant="solid" colorScheme="teal">
                 Details
               </Button>
             </Link>

@@ -20,7 +20,7 @@ const ItemDetail = ({ products }) => {
   return (
     <>
       {prodFilter.map((prod) => (
-        <div key={prod.id} className="itemList">
+        <div key={prod.id} className="itemContainer">
           <Card maxW="sm">
             <CardBody>
               <Image src={sofa} alt="Sofa" borderRadius="lg" />

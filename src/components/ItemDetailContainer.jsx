@@ -18,9 +18,9 @@ const ItemDetailContainer = () => {
 
   return (
     <>
-      <Container maxW="md" bg="blue.600" color="white">
+      <div className="itemList">
         <ItemDetail products={products} />
-      </Container>
+      </div>
     </>
   );
 };

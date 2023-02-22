@@ -4,12 +4,15 @@ import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const NavBar = () => {
   return (
     <div className="navBar">
       <Link to={"./"}>
-        <h1 className="brand">Muebleria</h1>
+        <div className="brand">
+          <img src={logo} alt="logo" />
+        </div>
       </Link>
       <Menu>
         <MenuButton
