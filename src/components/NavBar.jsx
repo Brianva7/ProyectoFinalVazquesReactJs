@@ -1,4 +1,3 @@
-import React from "react";
 import CartWidget from "./CartWidget";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
@@ -23,7 +22,7 @@ const NavBar = () => {
           Catalogo
         </MenuButton>
         <MenuList>
-          <Link to="/">
+          <Link to="/catalogue">
             <MenuItem>Todos los productos</MenuItem>
           </Link>
 

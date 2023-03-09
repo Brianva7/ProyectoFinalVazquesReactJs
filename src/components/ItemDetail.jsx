@@ -1,5 +1,7 @@
-import { useParams } from "react-router-dom";
-import ItemCount from "./ItemCount";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import { ArrowBackIcon } from "@chakra-ui/icons";
 import {
   Card,
   CardBody,
@@ -10,11 +12,28 @@ import {
   Divider,
   CardFooter,
   ButtonGroup,
+  Center,
 } from "@chakra-ui/react";
+import ItemCount from "./ItemCount";
 import sofa from "../assets/sofa.png";
+import { useEffect } from "react";
 
 const ItemDetail = ({ products }) => {
   const { id } = useParams();
+
+  /*   const [product, setProduct] = useState([]);
+
+  useEffect(() => {
+    const db = getFirestore();
+    const element = doc(db, "sillones", `${id}`);
+    getDoc(element).then((snapshot) => {
+      if (snapshot.exists()) {
+        setProduct(snapshot.data());
+      } else {
+        console.log("Document is empty");
+      }
+    });
+  }, []); */
 
   const prodFilter = products.filter((prod) => prod.id == id);
   return (
@@ -22,6 +41,11 @@ const ItemDetail = ({ products }) => {
       {prodFilter.map((prod) => (
         <div key={prod.id} className="itemContainer">
           <Card maxW="sm">
+            <Center padding={3}>
+              <Link to={"/catalogue"}>
+                <ArrowBackIcon boxSize={6} color="teal" />
+              </Link>
+            </Center>
             <CardBody>
               <Image src={sofa} alt="Sofa" borderRadius="lg" />
               <Stack mt="6" spacing="3">
@@ -36,7 +60,12 @@ const ItemDetail = ({ products }) => {
             <Divider />
             <CardFooter>
               <ButtonGroup spacing="2" className="footerButtons">
-                <ItemCount stock={prod.stock} />
+                <ItemCount
+                  id={prod.id}
+                  name={prod.name}
+                  price={prod.price}
+                  stock={prod.stock}
+                />
               </ButtonGroup>
             </CardFooter>
           </Card>

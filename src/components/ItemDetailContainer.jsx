@@ -1,21 +1,28 @@
-import React from "react";
-import ItemDetail from "./ItemDetail";
 import { useEffect, useState } from "react";
-import { Container } from "@chakra-ui/react";
+import { getFirestore, getDocs, collection } from "firebase/firestore";
+import ItemDetail from "./ItemDetail";
+import Loading from "./Loading";
 
 const ItemDetailContainer = () => {
-  const getElements = async () => {
-    const res = await fetch(`/products.json`);
-    const data = await res.json();
-    return data;
-  };
+  const [loading, setloading] = useState(true);
 
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    getElements().then((products) => setProducts(products));
+    const db = getFirestore();
+    const itemsCollection = collection(db, "sillones");
+    getDocs(itemsCollection).then((snapshot) => {
+      const docs = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+      setProducts(docs);
+    });
+    setloading(false);
   }, []);
-
+  if (loading)
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   return (
     <>
       <div className="itemList">

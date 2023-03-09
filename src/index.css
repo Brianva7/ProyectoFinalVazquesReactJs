@@ -92,3 +92,23 @@
 .welcomeP {
   padding: 15px;
 }
+
+.prodCartContainer {
+  width: 100%;
+}
+
+.cartHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid black;
+}
+.cartBlock {
+  width: 25%;
+  text-align: center;
+}
+
+.cartItems {
+  display: flex;
+  padding: 15px;
+}
