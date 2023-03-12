@@ -18,11 +18,11 @@ const Item = ({ id, name, stock, category }) => {
       <div key={id} className="itemContainer">
         <Card maxW="sm">
           <CardBody>
-            <Image src={sofa} alt="Sofa" borderRadius="lg" />
+            <Image src={sofa} alt="Sofa" />
             <Stack mt="6" spacing="3">
               <Heading size="md">{name}</Heading>
               <Text>Category : {category}</Text>
-              <Text color="teal.600" fontSize="2xl">
+              <Text color="green.300" fontSize="2xl">
                 Stock: {stock}
               </Text>
             </Stack>
@@ -30,7 +30,7 @@ const Item = ({ id, name, stock, category }) => {
           <Divider />
           <CardFooter>
             <Link to={`/item/${id}`}>
-              <Button variant="solid" colorScheme="teal">
+              <Button variant="solid" colorScheme="orange">
                 Details
               </Button>
             </Link>

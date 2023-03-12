@@ -21,7 +21,9 @@ const ItemListContainer = () => {
       }));
       setProducts(docs);
     });
-    setloading(false);
+    setTimeout(() => {
+      setloading(false);
+    }, 1000);
   }, []);
 
   const catFilter = products.filter(
@@ -30,7 +32,7 @@ const ItemListContainer = () => {
 
   if (loading)
     return (
-      <div>
+      <div className="loadingContainer">
         <Loading />
       </div>
     );

@@ -1,5 +1,3 @@
-import { doc, getDoc, getFirestore } from "firebase/firestore";
-import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import {
@@ -16,24 +14,9 @@ import {
 } from "@chakra-ui/react";
 import ItemCount from "./ItemCount";
 import sofa from "../assets/sofa.png";
-import { useEffect } from "react";
 
 const ItemDetail = ({ products }) => {
   const { id } = useParams();
-
-  /*   const [product, setProduct] = useState([]);
-
-  useEffect(() => {
-    const db = getFirestore();
-    const element = doc(db, "sillones", `${id}`);
-    getDoc(element).then((snapshot) => {
-      if (snapshot.exists()) {
-        setProduct(snapshot.data());
-      } else {
-        console.log("Document is empty");
-      }
-    });
-  }, []); */
 
   const prodFilter = products.filter((prod) => prod.id == id);
   return (
@@ -43,7 +26,7 @@ const ItemDetail = ({ products }) => {
           <Card maxW="sm">
             <Center padding={3}>
               <Link to={"/catalogue"}>
-                <ArrowBackIcon boxSize={6} color="teal" />
+                <ArrowBackIcon boxSize={6} color="red" />
               </Link>
             </Center>
             <CardBody>
@@ -51,7 +34,7 @@ const ItemDetail = ({ products }) => {
               <Stack mt="6" spacing="3">
                 <Heading size="md">{prod.name}</Heading>
                 <Text>{prod.description}</Text>
-                <Text color="blue.600" fontSize="2xl">
+                <Text color="blue.300" fontSize="2xl">
                   ${prod.price}
                 </Text>
                 <Text>Stock: {prod.stock}</Text>

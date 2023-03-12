@@ -5,6 +5,7 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart";
 import ShoppingCartContext from "./context/ShoppingCartContext";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           </Routes>
         </ShoppingCartContext>
       </BrowserRouter>
+      <Footer />
     </>
   );
 }

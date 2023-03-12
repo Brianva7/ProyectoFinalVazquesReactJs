@@ -12,14 +12,26 @@ const ItemCount = ({ id, name, price, stock }) => {
     if (count < stock) {
       setCount(count + 1);
     } else {
-      Swal.fire("La cantidad no puede superar el stock disponible");
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Can`t add more than stock",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
   };
   const restar = () => {
     if (count > 1) {
       setCount(count - 1);
     } else {
-      Swal.fire("La cantidad no puede ser menor a 1");
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Can`t be less than 1",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
   };
   const reset = () => {
@@ -44,17 +56,17 @@ const ItemCount = ({ id, name, price, stock }) => {
   };
   return (
     <>
-      <Button onClick={restar} variant="solid">
+      <Button onClick={restar} color="red">
         -
       </Button>
       <Box className="countLabel">{count.toString()}</Box>
-      <Button onClick={sumar} variant="solid">
+      <Button onClick={sumar} color="green">
         +
       </Button>
-      <Button onClick={reset} variant="solid" color="red.600">
+      <Button onClick={reset} colorScheme="blue">
         Reset
       </Button>
-      <Button onClick={() => addToCart()} variant="solid" color="teal">
+      <Button onClick={() => addToCart()} colorScheme="orange">
         Buy
       </Button>
     </>
