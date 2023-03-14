@@ -13,7 +13,6 @@ import {
   Center,
 } from "@chakra-ui/react";
 import ItemCount from "./ItemCount";
-import sofa from "../assets/sofa.png";
 
 const ItemDetail = ({ products }) => {
   const { id } = useParams();
@@ -30,12 +29,12 @@ const ItemDetail = ({ products }) => {
               </Link>
             </Center>
             <CardBody>
-              <Image src={sofa} alt="Sofa" borderRadius="lg" />
+              <Image src={prod.img} alt="Sofa" borderRadius="lg" />
               <Stack mt="6" spacing="3">
                 <Heading size="md">{prod.name}</Heading>
                 <Text>{prod.description}</Text>
                 <Text color="blue.300" fontSize="2xl">
-                  ${prod.price}
+                  U$D {prod.price}
                 </Text>
                 <Text>Stock: {prod.stock}</Text>
               </Stack>

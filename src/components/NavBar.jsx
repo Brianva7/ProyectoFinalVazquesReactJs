@@ -19,18 +19,18 @@ const NavBar = () => {
           as={Button}
           rightIcon={<ChevronDownIcon />}
         >
-          Catalogo
+          Catalogue
         </MenuButton>
         <MenuList>
           <Link to="/catalogue">
-            <MenuItem>Todos los productos</MenuItem>
+            <MenuItem>All products</MenuItem>
           </Link>
 
-          <Link to={`/category/${"interior"}`}>
-            <MenuItem>Interior</MenuItem>
+          <Link to={`/category/${"indoor"}`}>
+            <MenuItem>Indoor</MenuItem>
           </Link>
-          <Link to={`/category/${"exterior"}`}>
-            <MenuItem>Exterior</MenuItem>
+          <Link to={`/category/${"outdoor"}`}>
+            <MenuItem>Outdoor</MenuItem>
           </Link>
         </MenuList>
       </Menu>

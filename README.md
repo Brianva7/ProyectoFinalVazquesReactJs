@@ -4,7 +4,7 @@
 
 ---
 
-## Dejo gif adjunto con funcionalidad como requeria la rubrica!
+## gif adjunto con funcionalidad!
 
 ---
 

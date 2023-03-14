@@ -1,21 +1,30 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../context/ShoppingCartContext";
 import { Button, Center, Box, Heading } from "@chakra-ui/react";
+import Swal from "sweetalert2";
 import OrderId from "./OrderId";
 
 const Cart = () => {
   const { cart, setCart } = useContext(CartContext);
   const [buyConfirm, setBuyConfirm] = useState(false);
-
   const refreshCart = () => {
     setCart([]);
   };
-
   const deleteItem = (id) => {
     setCart(cart.filter((prod) => prod.id !== id));
   };
   const showForm = () => {
-    setBuyConfirm(true);
+    if (cart.length >= 1) {
+      setBuyConfirm(true);
+    } else {
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Cart is empty",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
   };
 
   return (
@@ -34,9 +43,13 @@ const Cart = () => {
           {cart.map((prod) => (
             <div key={prod.id} className="cartItems">
               <div className="cartBlock">{prod.name}</div>
+
               <div className="cartBlock">{prod.quantity}</div>
-              <div className="cartBlock">${prod.price}</div>
-              <div className="cartBlock">${prod.price * prod.quantity}</div>
+
+              <div className="cartBlock">U$D{prod.price}</div>
+
+              <div className="cartBlock">U$D{prod.price * prod.quantity}</div>
+
               <Button
                 onClick={() => deleteItem(prod.id)}
                 colorScheme="red"
@@ -50,10 +63,10 @@ const Cart = () => {
         <Center>
           <Box className="cartFooter" m={5}>
             <Heading size="md">
-              Total: ${cart.reduce((a, b) => a + b.price * b.quantity, 0)}
+              Total: U$D {cart.reduce((a, b) => a + b.price * b.quantity, 0)}
             </Heading>
             <Box m={5}>
-              <Button onClick={showForm} colorScheme="green">
+              <Button onClick={showForm} colorScheme="orange">
                 Confirm
               </Button>
             </Box>
@@ -61,7 +74,7 @@ const Cart = () => {
         </Center>
         {buyConfirm ? (
           <div className="formContainer">
-            <OrderId />
+            <OrderId cart={cart} />
           </div>
         ) : null}
       </div>

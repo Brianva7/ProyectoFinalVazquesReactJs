@@ -1,11 +1,10 @@
 import { useState, useContext } from "react";
 import { Button, Box } from "@chakra-ui/react";
 import { CartContext } from "../context/ShoppingCartContext";
-import React from "react";
 import Swal from "sweetalert2";
 
 const ItemCount = ({ id, name, price, stock }) => {
-  const { cart, setCart } = useContext(CartContext);
+  const { setCart } = useContext(CartContext);
   let [count, setCount] = useState(1);
 
   const sumar = () => {
@@ -63,11 +62,11 @@ const ItemCount = ({ id, name, price, stock }) => {
       <Button onClick={sumar} color="green">
         +
       </Button>
-      <Button onClick={reset} colorScheme="blue">
+      <Button onClick={reset} colorScheme="orange">
         Reset
       </Button>
       <Button onClick={() => addToCart()} colorScheme="orange">
-        Buy
+        Add
       </Button>
     </>
   );

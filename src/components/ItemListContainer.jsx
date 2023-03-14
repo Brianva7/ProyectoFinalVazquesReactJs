@@ -21,9 +21,7 @@ const ItemListContainer = () => {
       }));
       setProducts(docs);
     });
-    setTimeout(() => {
-      setloading(false);
-    }, 1000);
+    setloading(false);
   }, []);
 
   const catFilter = products.filter(

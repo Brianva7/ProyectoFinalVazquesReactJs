@@ -12,6 +12,7 @@ const ItemList = ({ products }) => {
             name={prod.name}
             stock={prod.stock}
             category={prod.category}
+            img={prod.img}
           />
         ))}
       </div>

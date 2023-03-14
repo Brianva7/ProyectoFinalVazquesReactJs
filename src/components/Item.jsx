@@ -10,19 +10,20 @@ import {
   Button,
   CardFooter,
 } from "@chakra-ui/react";
-import sofa from "../assets/sofa.png";
 
-const Item = ({ id, name, stock, category }) => {
+const Item = ({ id, name, stock, category, img }) => {
   return (
     <>
       <div key={id} className="itemContainer">
         <Card maxW="sm">
           <CardBody>
-            <Image src={sofa} alt="Sofa" />
-            <Stack mt="6" spacing="3">
+            <Link to={`/item/${id}`}>
+              <Image src={img} alt="Sofa" className="imgHover" />
+            </Link>
+            <Stack spacing="3" mt="4">
               <Heading size="md">{name}</Heading>
-              <Text>Category : {category}</Text>
-              <Text color="green.300" fontSize="2xl">
+              <Text fontSize="lg">Category: {category}</Text>
+              <Text color="blue.300" fontSize="2xl">
                 Stock: {stock}
               </Text>
             </Stack>

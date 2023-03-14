@@ -1,7 +1,15 @@
 import { useState } from "react";
 import { Button } from "@chakra-ui/react";
 import { collection, getFirestore, addDoc } from "firebase/firestore";
-import { FormControl, FormLabel, Box, Input } from "@chakra-ui/react";
+import {
+  FormControl,
+  FormLabel,
+  Box,
+  Input,
+  Heading,
+  Text,
+} from "@chakra-ui/react";
+import { TriangleDownIcon } from "@chakra-ui/icons";
 
 const OrderId = () => {
   const [orderId, setOrderId] = useState(null);
@@ -32,53 +40,88 @@ const OrderId = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <FormControl isRequired width="100%">
-          <FormLabel>Name</FormLabel>
-          <Input
-            type="text"
-            placeholder="Brian"
-            onChange={(e) => setName(e.target.value)}
-          />
-          <FormLabel>Surname</FormLabel>
-          <Input
-            type="text"
-            placeholder="Vazques"
-            onChange={(e) => setSurname(e.target.value)}
-          />
-          <FormLabel>E-mail</FormLabel>
-          <Input
-            type="email"
-            placeholder="Brian@vazques.com"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <FormLabel>Phone</FormLabel>
-          <Input
-            type="number"
-            placeholder="1123232323"
-            onChange={(e) => setPhone(e.target.value)}
-          />
-          <FormLabel>Adress</FormLabel>
-          <Input
-            type="text"
-            placeholder="Street 123"
-            onChange={(e) => setAdress(e.target.value)}
-          />
-          <FormLabel>City</FormLabel>
-          <Input
-            type="text"
-            placeholder="Buenos Aires"
-            onChange={(e) => setCity(e.target.value)}
-          />
-          <Box my={3} textAlign="center">
-            <Button type="submit" colorScheme="orange">
-              Submit
-            </Button>
+      <div className="orderItems">
+        <div className="orderMessagge  animate__animated animate__fadeIn">
+          <Heading size="xl">Thank you for your purchase!</Heading>
+          <p className="textP">
+            Thank you for your purchase from <Text as="b">UFurniture</Text>!
+            We're thrilled that you've chosen our furniture to beautify your
+            home. To ensure smooth delivery and excellent customer service, we
+            need some additional details from you.
+          </p>
+          <p className="textP">
+            You'll be asked to provide your personal information below so we can
+            generate an order ID and our sales representatives can contact you
+            if needed. The details we require include your full name, email
+            address, phone number, and shipping address. This information will
+            help us track your order and ensure it's delivered to the correct
+            address.
+          </p>
+          <p className="textP">
+            Don't worry, we protect your privacy and the information you provide
+            will be kept confidential. It will only be shared with our delivery
+            and customer service teams to ensure a seamless and hassle-free
+            shopping experience.
+          </p>
+          <p className="textP">
+            <TriangleDownIcon />
+          </p>
+        </div>
+        <form
+          onSubmit={handleSubmit}
+          className="animate__animated animate__fadeIn"
+        >
+          <FormControl isRequired width="100%">
+            <FormLabel>Name</FormLabel>
+            <Input
+              type="text"
+              placeholder="Brian"
+              onChange={(e) => setName(e.target.value)}
+            />
+            <FormLabel>Surname</FormLabel>
+            <Input
+              type="text"
+              placeholder="Vazques"
+              onChange={(e) => setSurname(e.target.value)}
+            />
+            <FormLabel>E-mail</FormLabel>
+            <Input
+              type="email"
+              placeholder="Brian@vazques.com"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <FormLabel>Phone</FormLabel>
+            <Input
+              type="number"
+              placeholder="1123232323"
+              onChange={(e) => setPhone(e.target.value)}
+            />
+            <FormLabel>Adress</FormLabel>
+            <Input
+              type="text"
+              placeholder="Street 123"
+              onChange={(e) => setAdress(e.target.value)}
+            />
+            <FormLabel>City</FormLabel>
+            <Input
+              type="text"
+              placeholder="Buenos Aires"
+              onChange={(e) => setCity(e.target.value)}
+            />
+            <Box my={3} textAlign="center">
+              <Button type="submit" colorScheme="orange">
+                Submit
+              </Button>
 
-            <Box m={3}>Order Id: {orderId}</Box>
-          </Box>
-        </FormControl>
-      </form>
+              <Box m={3}>
+                <Heading size="md">Generate your order ID on confirm</Heading>
+                <Text as="i">(Save this ID, it will make things easier!)</Text>:
+                <Heading size="md"> {orderId} </Heading>
+              </Box>
+            </Box>
+          </FormControl>
+        </form>
+      </div>
     </>
   );
 };
