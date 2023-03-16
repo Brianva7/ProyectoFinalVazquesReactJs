@@ -4,7 +4,7 @@ const Loading = () => {
   return (
     <div>
       <Center height={600}>
-        <Spinner />
+        <Spinner size="lg" />
       </Center>
     </div>
   );

@@ -1,4 +1,4 @@
-import { Box, Button, Badge } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { FaInstagram, FaFacebookSquare, FaEbay } from "react-icons/fa";
 
 const Footer = () => {

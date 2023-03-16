@@ -17,6 +17,7 @@ const ItemDetailContainer = () => {
     });
     setloading(false);
   }, []);
+
   if (loading)
     return (
       <div>
