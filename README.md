@@ -16,4 +16,4 @@
 
 ---
 
-## const OkeyLetsWork([Linkedin](https://www.linkedin.com/in/brian-vazques-a8a452245)) =>
+## const okeyLetsWork([Linkedin](https://www.linkedin.com/in/brian-vazques-a8a452245)) =>
