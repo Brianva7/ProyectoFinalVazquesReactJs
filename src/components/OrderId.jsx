@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../context/ShoppingCartContext";
 import { Button } from "@chakra-ui/react";
 import { collection, getFirestore, addDoc } from "firebase/firestore";
 import {
@@ -12,6 +13,8 @@ import {
 import { TriangleDownIcon } from "@chakra-ui/icons";
 
 const OrderId = () => {
+  const { cart, setCart } = useContext(CartContext);
+
   const [orderId, setOrderId] = useState(null);
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -27,6 +30,7 @@ const OrderId = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addDoc(ordersCollection, order).then(({ id }) => setOrderId(id));
+    setCart([]);
   };
 
   const order = {
@@ -36,32 +40,40 @@ const OrderId = () => {
     phone,
     adress,
     city,
+    cart,
   };
 
   return (
     <>
       <div className="orderItems">
         <div className="orderMessagge  animate__animated animate__fadeIn">
-          <Heading size="xl">Thank you for your purchase!</Heading>
+          <Heading size="xl">
+            <span className="altWord">Thank</span> you for your purchase!
+          </Heading>
           <p className="textP">
-            Thank you for your purchase from <Text as="b">UFurniture</Text>!
-            We're thrilled that you've chosen our furniture to beautify your
-            home. To ensure smooth delivery and excellent customer service, we
-            need some additional details from you.
+            Thank you for your purchase from{" "}
+            <span className="altWord">UFurniture</span>! We're thrilled that
+            you've chosen our furniture to beautify your home. To ensure smooth
+            delivery and excellent customer service, we need some additional
+            details from you.
           </p>
           <p className="textP">
-            You'll be asked to provide your personal information below so we can
-            generate an order ID and our sales representatives can contact you
-            if needed. The details we require include your full name, email
-            address, phone number, and shipping address. This information will
-            help us track your order and ensure it's delivered to the correct
-            address.
+            You'll be asked to provide{" "}
+            <span className="altWord">your personal information</span> below so
+            we can generate an order <span className="altWord">ID</span> and our
+            sales representatives can contact you if needed. The details we
+            require include your full name, email address, phone number, and
+            shipping address. This information will help us track your order and
+            ensure it's delivered to the correct address.
           </p>
           <p className="textP">
-            Don't worry, we protect your privacy and the information you provide
-            will be kept confidential. It will only be shared with our delivery
-            and customer service teams to ensure a seamless and hassle-free
-            shopping experience.
+            Don't worry,{" "}
+            <span className="altWord">
+              we protect your privacy and the information you provide will be
+              kept confidential.
+            </span>{" "}
+            It will only be shared with our delivery and customer service teams
+            to ensure a seamless and hassle-free shopping experience.
           </p>
           <p className="textP">
             <TriangleDownIcon />

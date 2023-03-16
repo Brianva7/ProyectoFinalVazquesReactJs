@@ -15,21 +15,22 @@ const NavBar = () => {
       </Link>
       <Menu>
         <MenuButton
-          className="menuButton"
+          colorScheme="orange"
           as={Button}
-          rightIcon={<ChevronDownIcon />}
+          rightIcon={<ChevronDownIcon color="black" />}
+          overflow="hidden"
         >
-          Catalogue
+          <span className="menuButton">Catalogue</span>
         </MenuButton>
-        <MenuList>
+        <MenuList border="2px" borderColor="orange">
           <Link to="/catalogue">
             <MenuItem>All products</MenuItem>
           </Link>
 
-          <Link to={`/category/${"indoor"}`}>
+          <Link to={`/category/${"Indoor"}`}>
             <MenuItem>Indoor</MenuItem>
           </Link>
-          <Link to={`/category/${"outdoor"}`}>
+          <Link to={`/category/${"Outdoor"}`}>
             <MenuItem>Outdoor</MenuItem>
           </Link>
         </MenuList>

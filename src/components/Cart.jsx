@@ -7,12 +7,14 @@ import OrderId from "./OrderId";
 const Cart = () => {
   const { cart, setCart } = useContext(CartContext);
   const [buyConfirm, setBuyConfirm] = useState(false);
+
   const refreshCart = () => {
     setCart([]);
   };
   const deleteItem = (id) => {
     setCart(cart.filter((prod) => prod.id !== id));
   };
+
   const showForm = () => {
     if (cart.length >= 1) {
       setBuyConfirm(true);
@@ -36,7 +38,12 @@ const Cart = () => {
             <div className="cartBlock">Quantity</div>
             <div className="cartBlock">Price</div>
             <div className="cartBlock">Total</div>
-            <Button onClick={refreshCart} colorScheme="orange" size="xs">
+            <Button
+              onClick={refreshCart}
+              colorScheme="orange"
+              color="black"
+              size="xs"
+            >
               <span className="material-symbols-outlined">refresh</span>
             </Button>
           </div>
@@ -53,6 +60,7 @@ const Cart = () => {
               <Button
                 onClick={() => deleteItem(prod.id)}
                 colorScheme="red"
+                color="black"
                 size="xs"
               >
                 <span className="material-symbols-outlined">delete</span>
@@ -66,7 +74,7 @@ const Cart = () => {
               Total: U$D {cart.reduce((a, b) => a + b.price * b.quantity, 0)}
             </Heading>
             <Box m={5}>
-              <Button onClick={showForm} colorScheme="orange">
+              <Button onClick={showForm} colorScheme="orange" color="black">
                 Confirm
               </Button>
             </Box>

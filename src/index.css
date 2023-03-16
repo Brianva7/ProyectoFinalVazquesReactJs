@@ -1,5 +1,6 @@
 #root {
   margin-bottom: 50px;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 .background {
@@ -9,6 +10,10 @@
   background-repeat: repeat;
   background-size: fill;
 }
+
+.altWord {
+  color: #e99a08;
+}
 /* NavBar css */
 
 .navBar {
@@ -17,7 +22,7 @@
   justify-content: space-between;
   align-items: center;
   padding-bottom: 5px;
-  border-bottom: 1px solid #dd6b20;
+  border-bottom: 1px solid #e99a08;
 }
 .brand {
   color: white;
@@ -26,7 +31,7 @@
 }
 
 .menuButton {
-  margin: auto;
+  color: black;
 }
 .cartButton {
   padding: 0 15px;
@@ -50,7 +55,7 @@
   width: 100%;
   background: linear-gradient(to right, #213547, black);
   margin-bottom: 0px;
-  border-top: 1px solid #dd6b20;
+  border-top: 1px solid #e99a08;
 }
 
 .footerBox {
@@ -100,9 +105,7 @@
   position: relative;
   top: 25px;
   height: fit-content;
-  min-height: 650px;
-  justify-content: center;
-  border: 1px solid #dd6b20;
+  border: 1px solid #e99a08;
   border-radius: 5px;
   box-shadow: 5px 5px 15px;
   margin: 15px 15px;
@@ -138,8 +141,8 @@
   height: fit-content;
   width: 75%;
   margin: 25px auto;
-  border: 1px solid #dd6b20;
-  border-radius: 25px;
+  border: 1px solid #e99a08;
+  border-radius: 50%;
   box-shadow: 5px 5px 15px rgb(0, 0, 0);
   display: block;
 }
@@ -243,7 +246,7 @@
 }
 
 form {
-  border: 2px solid #dd6b20;
+  border: 2px solid #e99a08;
   background-color: white;
   width: 50%;
   padding: 25px;
@@ -252,5 +255,41 @@ form {
   box-shadow: 5px 5px 15px;
   margin: 25px auto 50px;
 }
+@media screen and (max-width: 1200px) {
+  .welcome {
+    width: 85%;
+  }
+  .welcomeMessage {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 992px) {
+  form {
+    width: 75%;
+  }
+  .orderMessagge {
+    width: 75%;
+  }
+  .welcome {
+    width: 90%;
+  }
+  .welcomeMessage {
+    width: 65%;
+  }
+}
 
+@media screen and (max-width: 768px) {
+  .brand {
+    padding: 20px;
+  }
+  form {
+    width: 85%;
+  }
+  .welcome {
+    border-radius: 25px;
+  }
+  .orderMessagge {
+    width: 85%;
+  }
+}
 /* form css */

@@ -13,9 +13,11 @@ const CartWidget = () => {
 
   return (
     <div className="cartButton">
-      <Button colorScheme="orange" size="xs">
-        <span className="material-symbols-outlined">shopping_cart</span>
-        <span>{cartCount}</span>
+      <Button colorScheme="orange" size="md">
+        <span className="material-symbols-outlined menuButton">
+          shopping_cart
+        </span>
+        <span className="menuButton">{cartCount}</span>
       </Button>
     </div>
   );
