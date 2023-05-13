@@ -296,6 +296,9 @@ form {
   .welcome {
     border-radius: 25px;
   }
+  .welcomeMessage {
+    width: 95%;
+  }
   .orderMessagge {
     width: 85%;
   }
