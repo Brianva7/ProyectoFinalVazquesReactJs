@@ -23,21 +23,32 @@
   align-items: center;
   padding-bottom: 5px;
   border-bottom: 1px solid #e99a08;
+  height: 100px;
 }
 .brand {
-  color: white;
-  width: 148px;
-  text-align: center;
+  width: 25%;
+  display: flex;
+  padding-left: 15px;
+  height: 100%;
 }
 
+.brandLogo {
+  width: 100%;
+  height: 100%;
+}
+.menu {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
 .menuButton {
   color: black;
 }
 .cartButton {
-  padding: 0 15px;
-  width: 148px;
+  width: 25%;
   display: flex;
-  justify-content: center;
+  padding-right: 15px;
+  justify-content: right;
 }
 
 /* NavBar css */
@@ -279,9 +290,6 @@ form {
 }
 
 @media screen and (max-width: 768px) {
-  .brand {
-    padding: 20px;
-  }
   form {
     width: 85%;
   }
@@ -290,6 +298,16 @@ form {
   }
   .orderMessagge {
     width: 85%;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .menu {
+    width: 35%;
+  }
+  .brand {
+    height: 100%;
+    width: 40%;
   }
 }
 /* form css */
