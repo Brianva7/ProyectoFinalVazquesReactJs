@@ -1,3 +1,4 @@
+import img404 from "../assets/404.jpg";
 import { useParams, Link } from "react-router-dom";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import {
@@ -29,7 +30,7 @@ const ItemDetail = ({ products }) => {
               </Link>
             </Center>
             <CardBody>
-              <Image src={prod.img} alt="Sofa" borderRadius="lg" />
+              <Image src={img404} alt="Sofa" borderRadius="lg" />
               <Stack mt="6" spacing="3">
                 <Heading size="md">{prod.name}</Heading>
                 <Text>{prod.description}</Text>
