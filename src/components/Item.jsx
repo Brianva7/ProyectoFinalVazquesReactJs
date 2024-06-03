@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import img404 from "../assets/404.jpg";
 import {
   Card,
   CardBody,
@@ -18,7 +19,7 @@ const Item = ({ id, name, stock, category, img }) => {
         <Card maxW="sm">
           <CardBody>
             <Link to={`/item/${id}`}>
-              <Image src={img} alt="Sofa" className="imgHover" />
+              <Image src={img404} alt="Sofa" className="imgHover" />
             </Link>
             <Stack spacing="3" mt="4">
               <Heading size="md">{name}</Heading>
